@@ -6,4 +6,6 @@ out/
 
 #ignore iml file
 
-DataStructures.iml
+*.iml
+
+src/dataStructures/queue/
