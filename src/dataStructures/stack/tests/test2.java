@@ -15,19 +15,29 @@ public class test2 {
 
         for (int i = 0; i<10; i++){
             stack1.push(i);
+        }
+
+        System.out.println(stack1);
+
+        for (int i = 0; i<9; i++){
             stack1.pop();
         }
 
-        /*
-            for (int i = 0; i<9; i++){
-                stack1.pop();
-            }
-        */
-
-        System.out.println(stack1.printStack());
+        System.out.println(stack1);
 
         stack1.pop();
 
-        System.out.println(stack1.printStack());
+        System.out.println(stack1);
+
+        for (int i = 0; i<4; i++){
+            stack1.push(i);
+        }
+
+        System.out.println(stack1);
+
+        stack1.pop();
+        stack1.pop();
+
+        System.out.println(stack1);
     }
 }

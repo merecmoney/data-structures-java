@@ -10,5 +10,7 @@ public interface Stack {
 
     String printStack();
 
+    int size();
+
     boolean isEmpty();
 }
