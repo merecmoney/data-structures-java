@@ -49,7 +49,7 @@ public class QueueOfIntegers implements Queue{
     public String printQueue() {
         if (!isEmpty()){
             String content = "";
-            Node tmp = this.head;
+            Node tmp = new Node(this.head.getNext(), this.head.getValue());
             int i = 1;
             while (tmp != null){
                 content = content + (i) + ". node "
