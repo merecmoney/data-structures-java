@@ -14,12 +14,22 @@ public class test1 {
             queue.enqueue(i);
         }
 
-        System.out.println(queue.printQueue());
+        System.out.println(queue);
 
         Queue queue1 = new QueueOfIntegers();
 
         queue1.enqueue(1);
 
-        System.out.println(queue1.printQueue());
+        System.out.println(queue1);
+
+        QueueOfIntegers queue2 = new QueueOfIntegers();
+
+        System.out.println(queue2);
+
+        for (int i = 0; i < 10; i++) {
+            queue2.enqueue(i);
+        }
+
+        System.out.println(queue2);
     }
 }

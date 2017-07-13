@@ -15,25 +15,26 @@ public class test2 {
 
         }
 
-        for (int i = 0; i < 9; i++) {
+        System.out.println(queue);
+
+        for (int i = 0; i < 2; i++) {
             queue.dequeue();
         }
 
-        System.out.println(queue.size());
+        System.out.println(queue);
 
-        System.out.println(queue.printQueue());
 
-        queue.dequeue();
+        Queue queue1 = new QueueOfIntegers();
 
-        System.out.println(queue.size());
+        System.out.println(queue1);
 
-        queue.dequeue();
+        queue1.enqueue(10);
 
-        System.out.println(queue.size());
+        System.out.println(queue1);
 
-        queue.enqueue(5);
+        queue1.dequeue();
 
-        System.out.println(queue.printQueue());
+        System.out.println(queue1);
 
     }
 }

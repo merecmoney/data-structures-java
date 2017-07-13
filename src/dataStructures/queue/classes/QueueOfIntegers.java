@@ -11,10 +11,18 @@ public class QueueOfIntegers implements Queue{
     private Node tail;
     private int size;
 
+    public Node getHead(){
+        return this.head;
+    }
+
+    public Node getTail(){
+        return this.tail;
+    }
+
     @Override
     public void enqueue(int value) {
         Node node = new Node(value);
-        if (isEmpty() != true){
+        if (!isEmpty()){
             this.tail.setNext(node);
         }else {
             this.head = node;
@@ -26,15 +34,14 @@ public class QueueOfIntegers implements Queue{
     @Override
     public void dequeue() {
 
-        if (size() > 0){
-            size --;
-        }
-
         if (!isEmpty()){
             this.head = this.head.getNext();
+            if (size() == 1){
+                this.tail = this.head;
+            }
+            size --;
         }else {
             System.out.println("Queue is empty");
-            this.tail = this.head;
         }
     }
 
@@ -42,7 +49,7 @@ public class QueueOfIntegers implements Queue{
     public String printQueue() {
         if (!isEmpty()){
             String content = "";
-            Node tmp = this.head;
+            Node tmp = new Node(this.head.getNext(), this.head.getValue());
             int i = 1;
             while (tmp != null){
                 content = content + (i) + ". node "
@@ -58,7 +65,7 @@ public class QueueOfIntegers implements Queue{
             }
             return content;
         }
-        return "Queue is empty";
+        return "Queue is empty\n";
     }
 
     @Override
@@ -72,5 +79,11 @@ public class QueueOfIntegers implements Queue{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString(){
+        return "size " + size() + "\nhead " + getHead() + " tail "
+                + getTail() + "\nqueue list\n\n" + printQueue();
     }
 }
