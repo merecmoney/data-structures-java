@@ -7,5 +7,3 @@ out/
 #ignore iml file
 
 *.iml
-
-src/dataStructures/queue/

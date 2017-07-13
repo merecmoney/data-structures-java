@@ -34,8 +34,7 @@ public class Node {
     }
 
     public String toString(){
-        return "value " + this.value +
-                " next " + this.getNext().getValue() + "\n";
+        return "value " + this.value + "\n";
     }
 
 }
