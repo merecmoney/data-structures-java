@@ -11,10 +11,23 @@ public class QueueOfIntegers implements Queue{
     private Node tail;
     private int size;
 
+
+    @Override
+    public void setHead(Node node) {
+        this.head = node;
+    }
+
+    @Override
+    public void setTail(Node node) {
+        this.tail = node;
+    }
+
+    @Override
     public Node getHead(){
         return this.head;
     }
 
+    @Override
     public Node getTail(){
         return this.tail;
     }
@@ -71,6 +84,14 @@ public class QueueOfIntegers implements Queue{
     @Override
     public int size(){
         return this.size;
+    }
+
+    public void increaseSize(){
+        size ++;
+    }
+
+    public void decreaseSize(){
+        size --;
     }
 
     @Override
