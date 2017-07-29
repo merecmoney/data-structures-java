@@ -1,9 +1,34 @@
-#ignore all files in the .idea/ directory
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+#for IntelliJ IDEA IDE
+
+###############
+
+# ignore all files in the .idea/ directory
 .idea/
 
-#ignore all files inside out/directory
+# ignore all files inside out/directory
 out/
 
-#ignore iml file
+# ignore iml file
 
 *.iml
+
+###############
+
+# for Eclipse IDE
+
+# ignore bin directory for eclipse
+/bin/
+
+#ignore .classpath file
+
+/.classpath
+
+#ignore .project file
+
+/.project
