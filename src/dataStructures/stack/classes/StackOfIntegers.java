@@ -48,10 +48,11 @@ public class StackOfIntegers implements Stack{
             this.head = this.head.getNext();
             // decrease size
             size --;
-        }else {
-            // if it is empty
-            System.out.println("Stack is empty");
+            return;
         }
+        // if it is empty
+        System.out.println("Stack is empty");
+
     }
 
     // method to return a list of stack elements
