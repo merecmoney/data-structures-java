@@ -1,8 +1,13 @@
 # data-structures-java
 ### basic data structues in Java
-**list of data structures**
+
+### @merecmoney
+
 > this library uses int values
+
 > soon with Generic Clases
+
+**list of data structures**
 
 - stack
 - simple queue
