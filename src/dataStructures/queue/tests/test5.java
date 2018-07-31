@@ -16,6 +16,7 @@ public class test5 {
 
         System.out.println("for queue 1 tail next " + queue1.getTail().getNext());
         queue1.dequeue();
+        System.out.println(queue1);
         System.out.println("for queue 1 tail next after dequeue " +
                 queue1.getTail().getNext());
         System.out.println(queue1);
@@ -33,7 +34,7 @@ public class test5 {
 
         System.out.println(queue1);
 
-        System.out.println("for queue 1 tail next after a dequeue " +
+        System.out.println("for queue 1 tail next after a enqueue " +
                 queue1.getTail().getNext());
 
     }

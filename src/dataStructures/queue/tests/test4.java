@@ -22,7 +22,7 @@ public class test4 {
         for (int i = 0; i < (2 * queue1.size()); i++) {
             content = content + (i+1) + ". node "
                     + tmp.getValue() + "\n";
-            if (i+1 == 1) {
+            if (i+1 == 1 || i+1 == (queue1.size() + 1)) {
                 content = content + "head\n";
             }
             if (i+1 == queue1.size() || i+1 == 2*(queue1.size())){
