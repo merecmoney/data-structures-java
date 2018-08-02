@@ -11,7 +11,7 @@ public class test1 {
         Node root = new Node(12);
         BSF tree = new BSF(root);
 
-        int[] array = {5,18,2,9,17,15,19,13};
+        int[] array = {5,18,2,9,15,17,19,13};
 
         for (int i: array){
             tree.tree_insertion(new Node(i));

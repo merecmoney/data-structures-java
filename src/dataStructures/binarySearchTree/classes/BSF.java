@@ -30,6 +30,28 @@ public class BSF implements BinarySearchTree {
         insertion_condition(y, z);
     }
 
+
+    @Override
+    public void tree_recursive_insertion(Node z){
+        recursive_tree_insertion(getRoot(),null,z);
+    }
+
+    private void recursive_tree_insertion(Node x,Node y,Node z){
+        if (x != null){
+            y = x;
+            if (z.getKey() < x.getKey()){
+                x = x.getLeft();
+            }else {
+                x = x.getRight();
+            }
+            recursive_tree_insertion(x,y,z);
+            return;
+        }
+        z.setP(y);
+        insertion_condition(y, z);
+        //return;
+    }
+
     private void insertion_condition(Node y, Node z) {
         if (y == null){
             setRoot(z); //if tree were empty
@@ -40,11 +62,13 @@ public class BSF implements BinarySearchTree {
         }
     }
 
+    @Override
     public void inOrder(){
         inOrder_traversal(this.root);
     }
 
-    private void inOrder_traversal(Node x){
+    @Override
+    public void inOrder_traversal(Node x){
         if (x != null){
             inOrder_traversal(x.getLeft());
             System.out.println(x.getKey());
