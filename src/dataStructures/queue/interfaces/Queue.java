@@ -19,6 +19,10 @@ public interface Queue {
 
     void dequeue();
 
+    int dequeue_value_return();
+
+    Node dequeue_node_return();
+
     String printQueue();
 
     int size();

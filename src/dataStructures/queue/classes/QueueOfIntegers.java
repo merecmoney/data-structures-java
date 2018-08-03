@@ -58,6 +58,29 @@ public class QueueOfIntegers implements Queue{
         }
     }
 
+
+    @Override
+    public int dequeue_value_return(){
+        if (isEmpty()){
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        int value = getHead().getValue();
+        dequeue();
+        return value;
+    }
+
+    @Override
+    public Node dequeue_node_return(){
+        if (isEmpty()){
+            System.out.println("Queue is empty");
+            return null;
+        }
+        Node node = getHead();
+        dequeue();
+        return node;
+    }
+
     @Override
     public String printQueue() {
         if (!isEmpty()){
