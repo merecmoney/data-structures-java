@@ -55,6 +55,28 @@ public class StackOfIntegers implements Stack{
 
     }
 
+    @Override
+    public int pop_value_return() {
+        if (isEmpty()){
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        int value = getHead().getValue();
+        pop();
+        return value;
+    }
+
+    @Override
+    public Node pop_node_return(){
+        if (isEmpty()){
+            System.out.println("Queue is empty");
+            return null;
+        }
+        Node node = getHead();
+        pop();
+        return node;
+    }
+
     // method to return a list of stack elements
     @Override
     public String printStack() {

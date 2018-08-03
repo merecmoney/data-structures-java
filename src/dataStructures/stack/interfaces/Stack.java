@@ -27,6 +27,8 @@ When you remove an element to stack
  */
 package dataStructures.stack.interfaces;
 
+import dataStructures.stack.classes.Node;
+
 public interface Stack {
 
     //function to add an element to stack
@@ -43,4 +45,8 @@ public interface Stack {
 
     //function to check out it stack is empty
     boolean isEmpty();
+
+    int pop_value_return();
+
+    Node pop_node_return();
 }
