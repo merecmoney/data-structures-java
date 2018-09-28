@@ -58,7 +58,7 @@ public class StackOfIntegers implements Stack{
     @Override
     public int pop_value_return() {
         if (isEmpty()){
-            System.out.println("Queue is empty");
+            System.out.println("Stack is empty");
             return -1;
         }
         int value = getHead().getValue();
@@ -69,7 +69,7 @@ public class StackOfIntegers implements Stack{
     @Override
     public Node pop_node_return(){
         if (isEmpty()){
-            System.out.println("Queue is empty");
+            System.out.println("Stack is empty");
             return null;
         }
         Node node = getHead();
