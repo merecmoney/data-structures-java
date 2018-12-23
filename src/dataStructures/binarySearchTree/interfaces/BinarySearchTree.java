@@ -11,4 +11,8 @@ public interface BinarySearchTree {
     void inOrder();
 
     void inOrder_traversal(Node x);
+
+    Node tree_search(int key);
+
+    Node tree_recursive_search(int key);
 }

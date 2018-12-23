@@ -56,4 +56,9 @@ public class Node {
     public Node getP() {
         return p;
     }
+
+     @Override
+    public String toString(){
+        return  "Node with key: " + getKey() + " data: " + getData();
+    }
 }

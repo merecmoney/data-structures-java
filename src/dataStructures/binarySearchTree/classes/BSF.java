@@ -76,6 +76,39 @@ public class BSF implements BinarySearchTree {
         }
     }
 
+    @Override
+    public Node tree_search(int key) {
+        return iterative_tree_search(getRoot(), key);
+    }
+
+    private Node iterative_tree_search(Node x, int key){
+        while(x != null && x.getKey() != key){
+            if(x.getKey() > key){
+                x = x.getLeft();
+            }else {
+                x = x.getRight();
+            }
+        }
+        return x;
+    }
+
+    @Override
+    public Node tree_recursive_search(int key) {
+        return recursive_tree_search(getRoot(), key);
+    }
+
+    private Node recursive_tree_search(Node x, int key){
+        if (x == null || x.getKey() == key) {
+            return x;
+        }
+
+        if (x.getKey() > key){
+            return recursive_tree_search(x.getLeft(), key);
+        }else {
+            return recursive_tree_search(x.getRight(), key);
+        }
+    }
+
     public void setRoot(Node root) {
         this.root = root;
     }
