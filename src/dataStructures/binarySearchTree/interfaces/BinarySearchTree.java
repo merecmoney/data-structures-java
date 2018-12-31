@@ -15,4 +15,12 @@ public interface BinarySearchTree {
     Node tree_search(int key);
 
     Node tree_recursive_search(int key);
+
+    Node tree_minimum();
+
+    Node tree_maximum();
+
+    Node subtree_minimum(Node x);
+
+    Node subtree_maximum(Node x);
 }

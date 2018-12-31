@@ -109,6 +109,40 @@ public class BSF implements BinarySearchTree {
         }
     }
 
+    @Override
+    public Node tree_minimum(){
+        Node z = getRoot();
+        while (z.getLeft() != null) {
+            z = z.getLeft();
+        }
+
+        return z;
+    }
+
+    @Override
+    public Node tree_maximum() {
+        Node z = getRoot();
+        while (z.getRight() != null) {
+            z = z.getRight();
+        }
+
+        return z;
+    }
+
+    public Node subtree_minimum(Node x) {
+        while (x.getLeft() != null) {
+            x = x.getLeft();
+        }
+        return x;
+    }
+
+    public Node subtree_maximum(Node x) {
+        while (x.getRight() != null) {
+            x = x.getRight();
+        }
+        return x;
+    }
+
     public void setRoot(Node root) {
         this.root = root;
     }
