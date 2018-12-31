@@ -6,13 +6,7 @@ import dataStructures.binarySearchTree.classes.Node;
 
 public class test4 {
     public static void main(String[] args){
-        BinarySearchTree bst = new BSF();
-
-        int[] array = {15, 6, 18, 3, 7, 17, 20, 2, 4, 13, 9};
-
-        for (int i: array) {
-            bst.tree_insertion(new Node(i));
-        }
+        BinarySearchTree bst = bstTrees.example1();
 
         bst.inOrder();
 
