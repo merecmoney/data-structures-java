@@ -23,4 +23,6 @@ public interface BinarySearchTree {
     Node subtree_minimum(Node x);
 
     Node subtree_maximum(Node x);
+
+    Node tree_successor(Node x);
 }
