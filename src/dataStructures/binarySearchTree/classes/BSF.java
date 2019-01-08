@@ -39,7 +39,7 @@ public class BSF implements BinarySearchTree {
     private Node recursive_tree_insertion(Node x, Node z){
 
         if (getRoot() == null){
-            setRoot(x);
+            setRoot(z);
             return z;
         }
 
@@ -54,8 +54,6 @@ public class BSF implements BinarySearchTree {
         }
 
         return z;
-        //z.setP(y);
-        //insertion_condition(y, z);
     }
 
     private void insertion_condition(Node y, Node z) {
