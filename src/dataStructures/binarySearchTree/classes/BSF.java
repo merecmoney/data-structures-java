@@ -46,10 +46,12 @@ public class BSF implements BinarySearchTree {
         if (x != null){
             if (z.getKey() < x.getKey()){
                 x.setLeft(recursive_tree_insertion(x.getLeft(), z));
+                x.getLeft().setP(x);
             }else {
                 x.setRight(recursive_tree_insertion(x.getRight(), z));
+                x.getRight().setP(x);
             }
-            z.setP(x);
+
             return x;
         }
 
