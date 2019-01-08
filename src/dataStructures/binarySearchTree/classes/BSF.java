@@ -33,23 +33,29 @@ public class BSF implements BinarySearchTree {
 
     @Override
     public void tree_recursive_insertion(Node z){
-        recursive_tree_insertion(getRoot(),null,z);
+        recursive_tree_insertion(getRoot(), z);
     }
 
-    private void recursive_tree_insertion(Node x,Node y,Node z){
-        if (x != null){
-            y = x;
-            if (z.getKey() < x.getKey()){
-                x = x.getLeft();
-            }else {
-                x = x.getRight();
-            }
-            recursive_tree_insertion(x,y,z);
-            return;
+    private Node recursive_tree_insertion(Node x, Node z){
+
+        if (getRoot() == null){
+            setRoot(x);
+            return z;
         }
-        z.setP(y);
-        insertion_condition(y, z);
-        //return;
+
+        if (x != null){
+            if (z.getKey() < x.getKey()){
+                x.setLeft(recursive_tree_insertion(x.getLeft(), z));
+            }else {
+                x.setRight(recursive_tree_insertion(x.getRight(), z));
+            }
+            z.setP(x);
+            return x;
+        }
+
+        return z;
+        //z.setP(y);
+        //insertion_condition(y, z);
     }
 
     private void insertion_condition(Node y, Node z) {

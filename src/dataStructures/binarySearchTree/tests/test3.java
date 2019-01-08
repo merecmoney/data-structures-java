@@ -15,7 +15,6 @@ public class test3 {
 
         tree.inOrder();
 
-
         tree.inOrder_traversal(tree.getRoot().getLeft());
     }
 }
