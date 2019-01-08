@@ -151,10 +151,26 @@ public class BSF implements BinarySearchTree {
 
         Node y = x.getP();
 
-        while (y != null && x == y.getRight()){
+        while (y != null && x == y.getRight()) {
             x = y;
             y = y.getP();
         }
+        return y;
+    }
+
+    @Override
+    public Node tree_predecessor(Node x) {
+        if (x.getLeft() != null) {
+            return subtree_maximum(x.getLeft());
+        }
+
+        Node y = x.getP();
+
+        while (y != null && x == y.getLeft()){
+            x = y;
+            y = y.getP();
+        }
+
         return y;
     }
 
