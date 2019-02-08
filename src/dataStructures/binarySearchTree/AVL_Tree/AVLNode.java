@@ -7,12 +7,12 @@ public class AVLNode extends Node {
 
     public AVLNode (int key) {
         super(key);
-        this.setHeight(0);
+        this.setHeight(1);
     }
 
     public AVLNode (int key, String data) {
         super(key, data);
-        this.setHeight(0);
+        this.setHeight(1);
     }
 
     public void setHeight (int height) {

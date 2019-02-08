@@ -32,7 +32,7 @@ public class AVLBST {
         return height((AVLNode) z.getLeft()) - height((AVLNode) z.getRight());
     }
 
-    private void leftRotation(AVLNode x) {
+    private AVLNode leftRotation(AVLNode x) {
         AVLNode y = (AVLNode) x.getRight();
         AVLNode tmp = (AVLNode) y.getLeft();
 
@@ -40,13 +40,23 @@ public class AVLBST {
         y.setLeft(x);
         x.setRight(tmp);
 
+        //set Parents
+        y.setP(x.getP());
+        x.setP(y);
+
+        if (tmp != null) {
+            tmp.setP(x);
+        }
+
         //update heights
         updateHeight(x);
 
         updateHeight(y);
+
+        return y;
     }
 
-    private void rightRotation(AVLNode y) {
+    private AVLNode rightRotation(AVLNode y) {
         AVLNode x = (AVLNode) y.getLeft();
         AVLNode tmp = (AVLNode) x.getRight();
 
@@ -54,14 +64,27 @@ public class AVLBST {
         x.setRight(y);
         y.setLeft(tmp);
 
+        //set Parents
+        x.setP(y.getP());
+        y.setP(x);
+
+        if (tmp != null) {
+            tmp.setP(y);
+        }
+
         //update heights
         updateHeight(y);
 
         updateHeight(x);
+
+        return x;
     }
 
     public void tree_recursive_insertion(AVLNode z) {
-        recursive_tree_insertion((AVLNode) this.binarySearchTree.getRoot(), z);
+        AVLNode newRoot = recursive_tree_insertion((AVLNode)
+                this.binarySearchTree.getRoot(), z);
+
+        getBinarySearchTree().setRoot(newRoot);
     }
 
     private AVLNode recursive_tree_insertion(AVLNode x, AVLNode z) {
@@ -74,13 +97,36 @@ public class AVLBST {
         if (x != null) {
             if (z.getKey() < x.getKey()) {
                 x.setLeft(recursive_tree_insertion((AVLNode) x.getLeft(), z));
+                x.getLeft().setP(x);
             } else {
                 x.setRight(recursive_tree_insertion((AVLNode) x.getRight(), z));
+                x.getRight().setP(x);
             }
-            z.setP(x);
 
             //update height of ancestor
             updateHeight(x);
+
+            int balanceFactor = getBalanceFactor(x);
+            //System.out.println("key " + x.getKey() + " balance " + balanceFactor);
+
+
+            if (balanceFactor > 1 && z.getKey() < x.getLeft().getKey()) {
+                //left left case
+                System.out.println("left left");
+                return rightRotation(x);
+            }else if (balanceFactor < -1 && z.getKey() >= x.getRight().getKey()){
+                //right right case
+                System.out.println("right right");
+                return leftRotation(x);
+            }else if (balanceFactor > 1 && z.getKey() >= x.getLeft().getKey()) {
+                System.out.println("left right");
+                x.setLeft(leftRotation((AVLNode) x.getLeft()));
+                return rightRotation(x);
+            }else if (balanceFactor < -1 && z.getKey() < x.getRight().getKey()) {
+                System.out.println("right left");
+                x.setRight(rightRotation((AVLNode) x.getRight()));
+                return leftRotation(x);
+            }
 
             return x;
         }
@@ -94,6 +140,9 @@ public class AVLBST {
     private void preOrder_traversal(AVLNode x) {
         if (x != null) {
             System.out.println(x);
+            if (x.getP() != null){
+                System.out.println(x.getP().getKey());
+            }
             preOrder_traversal((AVLNode) x.getLeft());
             preOrder_traversal((AVLNode) x.getRight());
         }
