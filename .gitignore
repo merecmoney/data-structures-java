@@ -32,3 +32,6 @@ out/
 #ignore .project file
 
 /.project
+
+#ignore vs code
+/.vscode
